@@ -1,8 +1,9 @@
+import { useContext } from 'react';
+import GlobalContext from '../contexts/GlobalContext';
 import './UserInfoPage.css';
 
 function UserInfo() {
-	// TODO: Get actual user data
-  const userData = {test: 'foo'}
+  const userData = useContext(GlobalContext)?.user
 
 	if (!userData) return null
 

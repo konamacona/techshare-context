@@ -1,9 +1,10 @@
+import { useContext } from 'react';
+import GlobalContext from '../contexts/GlobalContext';
 import UserInfo from './UserInfo';
 import './UserInfoPage.css';
 
 function UserInfoPage() {
-  // TODO: Check if user is logged in
-  const loggedIn = true
+  const loggedIn = useContext(GlobalContext)?.user !== null
   return (
     <div className="UserInfoPage">
       <h1>User Info</h1>
