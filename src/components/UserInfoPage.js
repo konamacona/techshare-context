@@ -4,7 +4,7 @@ import UserInfo from './UserInfo';
 import './UserInfoPage.css';
 
 function UserInfoPage() {
-  const loggedIn = useContext(GlobalContext)?.user !== null
+  const loggedIn = useContext(GlobalContext)?.state?.user !== null
   return (
     <div className="UserInfoPage">
       <h1>User Info</h1>

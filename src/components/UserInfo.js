@@ -3,7 +3,8 @@ import GlobalContext from '../contexts/GlobalContext';
 import './UserInfoPage.css';
 
 function UserInfo() {
-  const userData = useContext(GlobalContext)?.user
+	const { state, dispatch } = useContext(GlobalContext)
+  const userData = state?.user
 
 	if (!userData) return null
 
@@ -12,6 +13,7 @@ function UserInfo() {
 			{Object.keys(userData).map(k => {
 				return <li key={k}>{k}: {userData[k]}</li>
 			})}
+			<button onClick={() => dispatch({ type: 'increment_age'})}>Age Up</button>
     </ul>
   );
 }
